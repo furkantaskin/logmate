@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Logmate Login Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dist/css/style.css">
+</head>
+<body>
+<header>
+    <img src="coderofis.svg" alt="">
+    <span>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="refresh">
+        <path d="M35.3 12.7C32.41 9.8 28.42 8 24 8 15.16 8 8.02 15.16 8.02 24S15.16 40 24 40c7.45 0 13.69-5.1 15.46-12H35.3c-1.65 4.66-6.07 8-11.3 8-6.63 0-12-5.37-12-12s5.37-12 12-12c3.31 0 6.28 1.38 8.45 3.55L26 22h14V8l-4.7 4.7z"/>
+        <path fill="none" d="M0 0h48v48H0z"/>
+    </svg>
+    </span>
+    <span>
+        <svg class="addnew" xmlns="http://www.w3.org/2000/svg" xml:space="preserve" viewBox="0 0 32 32">
+        <path d="M28 14H18V4c0-1.104-.896-2-2-2s-2 .896-2 2v10H4c-1.104 0-2 .896-2 2s.896 2 2 2h10v10c0 1.104.896 2 2 2s2-.896 2-2V18h10c1.104 0 2-.896 2-2s-.896-2-2-2z"/>
+    </svg>
+    </span>
+</header>
+<div class="sideMenu">
+    <label for="url">
+        <input type="text" name="url" id="url" placeholder="Adres">
+    </label>
+    <label for="username">
+        <input type="text" name="username" id="username" placeholder="Kullanıcı Adı">
+    </label>
+    <label for="password">
+        <input type="password" name="password" id="password" placeholder="Parola">
+    </label>
+    <div class="btn-wrapper">
+        <button id="addurl">Ekle</button>
+        <span class="info"></span>
+
+    </div>
+
+</div>
+<main>
+    <span>Lütfen giriş yapacağınız siteyi seçiniz</span>
+    <select name="siteler" id="siteler"></select>
+    <div class="btn-wrapper">
+        <button>Giriş Yap</button>
+        <span class="mainInfo"></span>
+    </div>
+
+</main>
+<script src="dist/js/extensions.js"></script>
+</body>
+</html>

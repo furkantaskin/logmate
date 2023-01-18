@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Logmate",
+  "version": "0.1",
+  "description": "Login helper for admin panels",
+  "author": "ocrhksmli@mozmail.com",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "parya.png"
+  },
+  "background": {
+    "service_worker": "./dist/js/background.js"
+  },
+  "permissions": ["storage", "tabs"],
+  "content_scripts": [
+    {
+      "matches": ["https://*/*/yonetim", "http://*/*/yonetim", "https://*/*/admin", "http://*/*/admin"],
+      "js": ["./dist/js/scripts.js"]
+    }
+  ]
+
+}
