@@ -1,7 +1,19 @@
 import axios from "axios";
+import * as dotenv from "dotenv";
+dotenv.config();
 
+interface listComp {
+    url: string,
+    username: string,
+    pass: string
+}
+
+
+const getUrl: string = process.env.GETURL!;
+const postUrl: string = process.env.POSTURL!;
+console.log(getUrl, postUrl);
 let isActive: boolean = false;
-let getList: object = {}
+let getList: {[key: string]: listComp} = {}
 const addButton = document.querySelector("svg.addnew");
 const refButton = document.querySelector("svg.refresh");
 const sideMenu = document.querySelector(".sideMenu");
@@ -13,14 +25,10 @@ let siteList = document.getElementById("siteler") as HTMLSelectElement;
 
 
 function fetchData() {
-    axios.get("http://127.0.0.1:8000/getlist/",)
+    axios.get(getUrl,)
         .then(function (response) {
-            interface listComp {
-                url: string,
-                username: string,
-                pass: string
-            }
-            const getList: {[key: string]: listComp} = response.data;
+
+            getList = response.data;
             mainSpan.innerHTML = "Veriler güncellendi";
             for (const key in getList){
                 let option = document.createElement("option") as HTMLOptionElement;
@@ -57,13 +65,6 @@ function toggleMenu(isOpen: boolean) {
 window.addEventListener("DOMContentLoaded", () => {
     fetchData()
 })
-
-
-let data = {
-    url: (<HTMLInputElement>document.getElementById("url")),
-    username: (<HTMLInputElement>document.getElementById("username")),
-    pass: (<HTMLInputElement>document.getElementById("password"))
-}
 
 
 function sendData(link: string, user: string, passw: string) {
