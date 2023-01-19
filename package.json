@@ -5,7 +5,8 @@
   "main": "scripts.js",
   "dependencies": {
     "@types/chrome": "^0.0.208",
-    "axios": "^1.2.2"
+    "axios": "^1.2.2",
+    "dotenv": "^16.0.3"
   },
   "devDependencies": {
     "ts-loader": "^9.4.2",
